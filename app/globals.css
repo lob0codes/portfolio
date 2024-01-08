@@ -2,26 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* General */
+*,
+:after,
+:before {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --color-body: #151515;
+  --color-headings: ivory;
+  --color-primary: #3c415c;
+  --color-secondary: darkmagenta;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--color-body);
+  color: var(--color-headings);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.block {
+  padding: var(--padding-vertical) 2rem;
+  --padding-vertical: 5rem;
+}
+
+/* Typography */
+html {
+  /* 62.5% of 16px = 10px */
+  font-size: 62.5%;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+}
+
+.grid--1x2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--1x3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--2x1 {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
 }

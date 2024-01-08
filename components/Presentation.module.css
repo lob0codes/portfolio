@@ -1,0 +1,10 @@
+.presentation {
+  background-image: url("/images/sky2-large.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-headings);
+  padding: 12rem 3rem;
+  margin: 1.5rem 0;
+  text-align: center;
+}

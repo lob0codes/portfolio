@@ -1,0 +1,44 @@
+.showroom {
+  color: var(--color-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin: 10rem 0;
+}
+
+.showroom__content {
+  column-gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.previous-project,
+.next-project {
+  fill: var(--color-secondary);
+  height: 55px;
+  transition: transform 0.4s ease;
+  width: 55px;
+}
+
+@media screen and (max-width: 768px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .scroll-list {
+    grid-column: 1 / span 2;
+  }
+  .previous-project {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+.previous-project:hover {
+  transform: translateX(-10px);
+}
+
+.next-project:hover {
+  transform: translateX(10px);
+}

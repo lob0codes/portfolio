@@ -1,0 +1,21 @@
+.header {
+  align-items: center;
+  color: var(--color-secondary);
+  display: flex;
+  font-size: 1.6rem;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list__item {
+  margin: 5px 10px;
+  transition: color 0.8s ease;
+}
+
+.nav-list__item:hover {
+  color: var(--color-headings);
+}

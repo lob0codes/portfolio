@@ -1,0 +1,17 @@
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__icon {
+  color: var(--color-secondary);
+  height: 35px;
+  margin: 1rem 5rem;
+  width: 35px;
+  transition: color 0.8s ease;
+}
+
+.footer__icon:hover {
+  color: var(--color-headings);
+}

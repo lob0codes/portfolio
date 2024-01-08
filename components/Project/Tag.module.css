@@ -1,0 +1,20 @@
+.tag {
+  align-items: center;
+  background-color: var(--color-secondary);
+  border-radius: 20px;
+  color: var(--color-body);
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem 0 1rem 1rem;
+}
+
+.tag__header {
+  margin: 0 0 0 0.5rem;
+}
+
+.tag__icon {
+  fill: var(--color-body);
+  height: 20px;
+  margin: 0.5rem;
+  width: 20px;
+}
