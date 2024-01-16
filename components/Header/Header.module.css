@@ -7,6 +7,29 @@
   padding: 0 1.5rem;
 }
 
+.header__name {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.header__name__vertical-bar,
+.header__name__horizontal-bar {
+  background-color: var(--color-secondary);
+}
+
+@media screen and (max-width: 768px) {
+  .header__name {
+    flex-direction: column;
+    gap: 0.2rem;
+    margin: 1rem 0 0;
+  }
+
+  .header__name__horizontal-bar {
+    height: 0.1rem;
+  }
+}
+
 .nav-list {
   display: flex;
 }
