@@ -16,19 +16,23 @@ import ProjectModel from "@/models/project";
 
 const projectsData = [
   new ProjectModel(
-    "Tabletop Info Scraper",
+    "Tabletop Info Scraper (Placeholder)",
     "Its an app that will look for tabletop games prices.",
     { src: project1Img, alt: "Project image representation." }
   ),
   new ProjectModel(
-    "Gym Companion",
+    "Gym Companion (Placeholder)",
     "Its an app that helps creating gym to dos.",
     { src: project2Img, alt: "Project image representation." }
   ),
-  new ProjectModel("Observatory Landig Page", "Landing page of a business.", {
-    src: project3Img,
-    alt: "Project image representation.",
-  }),
+  new ProjectModel(
+    "Observatory Landig Page (Placeholder)",
+    "Landing page of a business.",
+    {
+      src: project3Img,
+      alt: "Project image representation.",
+    }
+  ),
 ];
 
 export default function Showroom() {

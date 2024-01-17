@@ -25,7 +25,7 @@ export default function ContactForm() {
               <input type="email" id="email" name="email" required />
             </div>
           </div>
-          <div className={classes.contact__form__data}>
+          <div className={classes.contact__form__message}>
             <label htmlFor="message"> Message </label>
             <textarea id="email" name="message" rows={10} required />
           </div>

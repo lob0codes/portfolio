@@ -37,8 +37,8 @@ a {
 }
 
 .block {
-  padding: var(--padding-vertical) 2rem;
   --padding-vertical: 5rem;
+  padding: var(--padding-vertical) 2rem;
 }
 
 /* Typography */
