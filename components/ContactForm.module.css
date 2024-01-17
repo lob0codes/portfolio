@@ -11,30 +11,39 @@
 }
 
 .contact__header {
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__header {
+    flex-direction: column;
+    gap: 7rem;
+  }
 }
 
 .contact__header img {
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   height: 400px;
-  max-width: 100%;
   width: 400px;
 }
 
 .contact__header h3 {
-  margin: auto;
   max-width: 30ch;
   text-align: center;
 }
 
 .contact__body {
   margin: 12rem 5rem;
-  position: relative;
 }
 
 .contact__form {
   font-size: 1.7rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
@@ -42,21 +51,37 @@
   gap: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
 .contact__form__data {
-  margin: 15px 0;
+  margin: 0 0 15px 0;
   color: var(--color-secondary);
+}
+
+.contact__form__data input {
+  width: 300px;
+}
+
+.contact__form__data textarea {
+  width: 610px;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__form__data textarea {
+    width: 384px;
+  }
 }
 
 .contact__form__data input,
 .contact__form__data textarea {
   background-color: dimgray;
-  width: 300px;
   display: block;
   padding: 0 1rem;
-}
-
-.contact__form__data textarea {
-  width: 610px;
 }
 
 .contact__form__submit-btn {
@@ -68,10 +93,9 @@
   font-size: 1.5rem;
   font-weight: 500;
   padding: 1rem;
-  position: absolute;
-  right: 0;
   transition: color 0.4s ease, border-color 0.4s ease;
-  text-align: right;
+  width: fit-content;
+  align-self: flex-end;
 }
 
 .contact__form__submit-btn:hover {

@@ -7,13 +7,11 @@ export default function ContactForm() {
   return (
     <section className={`container ${classes.contact}`}>
       <header className={classes.contact__header}>
-        <div className="grid grid--1x2">
-          <h3>
-            Feel free to contact me about projects ideas or any feedback you may
-            have about my job.
-          </h3>
-          <Image src={robotImage} alt="robot image" />
-        </div>
+        <h3>
+          Feel free to contact me about projects ideas or any feedback you may
+          have about my job.
+        </h3>
+        <Image src={robotImage} alt="robot image" />
       </header>
       <main className={classes.contact__body}>
         <form className={classes.contact__form} action={shareMessage}>
@@ -31,10 +29,12 @@ export default function ContactForm() {
             <label htmlFor="message"> Message </label>
             <textarea id="email" name="message" rows={10} required />
           </div>
-
-          <p className={classes["contact__form__submit-btn"]}>
-            <button type="submit">Share Message</button>
-          </p>
+          <button
+            type="submit"
+            className={classes["contact__form__submit-btn"]}
+          >
+            Share Message
+          </button>
         </form>
       </main>
     </section>
