@@ -98,6 +98,12 @@
   align-self: flex-end;
 }
 
+@media screen and (max-width: 768px) {
+  .contact__form__submit-btn {
+    align-self: flex-start;
+  }
+}
+
 .contact__form__submit-btn:hover {
   border-color: var(--color-headings);
   color: var(--color-headings);
