@@ -37,7 +37,13 @@
 }
 
 .contact__body {
-  margin: 12rem 0;
+  margin: 12rem 0 5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+  .contact__body {
+    margin: 12rem 0 0 0;
+  }
 }
 
 .contact__form {
