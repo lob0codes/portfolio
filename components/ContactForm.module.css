@@ -81,12 +81,6 @@
   display: block;
 }
 
-@media screen and (max-width: 768px) {
-  /* .contact__form__data textarea {
-    width: 384px;
-  } */
-}
-
 .contact__form__submit-btn {
   background-color: var(--color-body);
   border: 2px solid var(--color-secondary);
