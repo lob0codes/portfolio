@@ -18,6 +18,7 @@ const ScrollListItem: React.FC<{
         image={item.image}
         title={item.title}
         description={item.description}
+        tags={item.tags}
       />
     </div>
   );

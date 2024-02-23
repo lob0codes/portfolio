@@ -2,23 +2,35 @@
 
 import ScrollList from "./ScrollList";
 import classes from "@/components/Showroom/Showroom.module.css";
+
+import { BiLogoPostgresql } from "react-icons/bi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faJs } from "@fortawesome/free-brands-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCaretSquareUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
 
-import project1Img from "@/assests/gloomheaven.jpg";
+import project1Img from "@/public/images/webpage_icon.png";
 import project2Img from "@/assests/gymCompanion.jpeg";
 import project3Img from "@/assests/sky-image.jpg";
 
 import ProjectModel from "@/models/project";
+import TagModel from "@/models/tag";
 
 const projectsData = [
   new ProjectModel(
-    "Tabletop Info Scraper (Placeholder)",
-    "Its an app that will look for tabletop games prices.",
-    { src: project1Img, alt: "Project image representation." }
+    "Red Beard Meeple Web Page",
+    "Its a web page created to show and discuss about tabletop games!",
+    { src: project1Img, alt: "Project image representation." },
+    [
+      new TagModel("Next.js", faJs),
+      new TagModel("PostgreSQL", BiLogoPostgresql),
+      new TagModel("Prisma", faCaretSquareUp),
+    ]
   ),
   new ProjectModel(
     "Gym Companion (Placeholder)",
