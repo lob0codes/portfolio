@@ -5,17 +5,32 @@
   font-size: 1.6rem;
   justify-content: space-between;
   padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-body);
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.header.vertically-scrolled {
+  color: var(--color-body);
+  background-color: var(--color-secondary);
 }
 
 .header__name {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  transition: background-color, color 0.3s ease-in-out;
 }
 
-.header__name__vertical-bar,
-.header__name__horizontal-bar {
+.header__name__bar {
   background-color: var(--color-secondary);
+  transition: all 0.8s ease-in-out;
+}
+
+.header__name__bar.vertically-scrolled {
+  background-color: var(--color-body);
 }
 
 @media screen and (max-width: 768px) {

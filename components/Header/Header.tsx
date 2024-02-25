@@ -4,6 +4,7 @@ import classes from "@/components/Header/Header.module.css";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useWindowSize } from "@uidotdev/usehooks";
+import { useEffect, useState } from "react";
 
 function isScreenSmall(width: number | null) {
   if (width) {
@@ -12,12 +13,16 @@ function isScreenSmall(width: number | null) {
 }
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const { width }: { width: number | null } = useWindowSize();
+
   const verticalBar = (
     <motion.div
       key={"vertical-bar"}
       animate={{ height: "2rem", width: "0.1rem" }}
-      className={classes["header__name__vertical-bar"]}
+      className={`${classes["header__name__bar"]} ${
+        isScrolled ? classes["vertically-scrolled"] : ""
+      }`}
     />
   );
 
@@ -26,12 +31,37 @@ export default function Header() {
       key={"horizontal-bar"}
       animate={{ height: "0.1rem", width: "100%" }}
       exit={{ width: 0 }}
-      className={classes["header__name__horizontal-bar"]}
+      className={`${classes["header__name__bar"]} ${
+        isScrolled ? classes["vertically-scrolled"] : ""
+      }`}
     />
   );
 
+  function verticalScrollHandler() {
+    if (window.scrollY > 90) {
+      console.log(window.scrollY);
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  }
+
+  useEffect(() => {
+    addEventListener("scroll", verticalScrollHandler);
+
+    return () => {
+      if (window) {
+        window.removeEventListener("scroll", verticalScrollHandler);
+      }
+    };
+  }, []);
+
   return (
-    <header className={classes.header}>
+    <header
+      className={`${classes.header} ${
+        isScrolled ? classes["vertically-scrolled"] : ""
+      }`}
+    >
       <div className={classes.header__name}>
         <p>Ale Alvarado</p>
         {isScreenSmall(width) ? horizontalBar : verticalBar}

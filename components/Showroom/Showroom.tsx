@@ -30,7 +30,8 @@ const projectsData = [
       new TagModel("Next.js", faJs),
       new TagModel("PostgreSQL", BiLogoPostgresql),
       new TagModel("Prisma", faCaretSquareUp),
-    ]
+    ],
+    "https://red-beard-meeple-app.vercel.app/"
   ),
   new ProjectModel(
     "Gym Companion (Placeholder)",

@@ -6,20 +6,40 @@ const ScrollListItem: React.FC<{
   item: ProjectModel;
   activeIndex: number;
   itemIndex: number;
-}> = ({ item, activeIndex, itemIndex }) => {
+  url?: string;
+}> = ({ item, activeIndex, itemIndex, url }) => {
   const scrollItemCLasses =
     activeIndex === itemIndex
       ? `${classes["scroll-list__item"]}${classes.active}`
       : `${classes["scroll-list__item"]}`;
 
+  function anchorClickHandler(
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    title?: string
+  ) {
+    console.log(title);
+    if (url === "") {
+      event.preventDefault();
+    }
+  }
+
   return (
     <div className={scrollItemCLasses}>
-      <Project
-        image={item.image}
-        title={item.title}
-        description={item.description}
-        tags={item.tags}
-      />
+      <a
+        href={url}
+        onClick={(event) => {
+          anchorClickHandler(event, item.title);
+        }}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Project
+          image={item.image}
+          title={item.title}
+          description={item.description}
+          tags={item.tags}
+        />
+      </a>
     </div>
   );
 };
