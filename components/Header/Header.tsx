@@ -39,7 +39,6 @@ export default function Header() {
 
   function verticalScrollHandler() {
     if (window.scrollY > 90) {
-      console.log(window.scrollY);
       setIsScrolled(true);
     } else {
       setIsScrolled(false);

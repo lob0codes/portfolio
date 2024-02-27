@@ -14,10 +14,8 @@ const ScrollListItem: React.FC<{
       : `${classes["scroll-list__item"]}`;
 
   function anchorClickHandler(
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    title?: string
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) {
-    console.log(title);
     if (url === "") {
       event.preventDefault();
     }
@@ -27,9 +25,7 @@ const ScrollListItem: React.FC<{
     <div className={scrollItemCLasses}>
       <a
         href={url}
-        onClick={(event) => {
-          anchorClickHandler(event, item.title);
-        }}
+        onClick={anchorClickHandler}
         target="_blank"
         rel="noopener noreferrer"
       >

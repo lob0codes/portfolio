@@ -1,7 +1,6 @@
 import classes from "@/components/Showroom/ScrollList.module.css";
 import ScrollListItem from "./ScrollListItem";
 import ProjectModel from "@/models/project";
-import Link from "next/link";
 
 const ScrollList: React.FC<{
   activeIndex: number;

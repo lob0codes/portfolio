@@ -1,14 +1,14 @@
 .header {
   align-items: center;
+  background-color: var(--color-body);
   color: var(--color-secondary);
   display: flex;
   font-size: 1.6rem;
+  font-weight: bold;
   justify-content: space-between;
   padding: 0 1.5rem;
   position: sticky;
   top: 0;
-  background-color: var(--color-body);
-  font-weight: bold;
   transition: all 0.3s ease-in-out;
 }
 

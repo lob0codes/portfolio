@@ -1,5 +1,5 @@
 import ContactForm from "@/components/ContactForm";
 
-export default function Casa() {
+export default function ContactPage() {
   return <ContactForm />;
 }

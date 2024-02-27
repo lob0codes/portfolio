@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  margin: 7rem 0;
 }
 
 .showroom__content {
@@ -26,6 +25,7 @@
 @media screen and (max-width: 768px) {
   .showroom__content {
     grid-template-columns: 1fr 1fr;
+    row-gap: 5rem;
   }
 
   .showroom__content div:nth-child(2) {

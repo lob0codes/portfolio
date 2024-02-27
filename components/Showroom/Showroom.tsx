@@ -72,7 +72,7 @@ export default function Showroom() {
   }
 
   return (
-    <section className={`block ${classes.showroom}`}>
+    <section className={`block container ${classes.showroom}`}>
       <h2 className={classes.showroom__title}>Showroom</h2>
       <div className={classes.showroom__content}>
         <div onClick={leftArrowClickHandler}>

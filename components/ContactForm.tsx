@@ -5,7 +5,7 @@ import { shareMessage } from "@/lib/actions";
 
 export default function ContactForm() {
   return (
-    <section className={`container ${classes.contact}`}>
+    <section className={`block container ${classes.contact}`}>
       <header className={classes.contact__header}>
         <h3>
           Feel free to contact me about projects ideas or any feedback you may

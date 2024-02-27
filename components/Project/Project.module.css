@@ -8,11 +8,11 @@
   width: 400px;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .project {
     width: 100%;
   }
-}
+} */
 
 .project__content {
   padding: 0 0.9rem 0 0.9rem;
