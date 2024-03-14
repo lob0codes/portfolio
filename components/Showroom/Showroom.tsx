@@ -15,7 +15,7 @@ import {
 import { useState } from "react";
 
 import project1Img from "@/public/images/webpage_icon.png";
-import project2Img from "@/assests/gymCompanion.jpeg";
+import project2Img from "@/assests/to-do-app.jpg";
 import project3Img from "@/assests/sky-image.jpg";
 
 import ProjectModel from "@/models/project";
@@ -34,9 +34,15 @@ const projectsData = [
     "https://red-beard-meeple-app.vercel.app/"
   ),
   new ProjectModel(
-    "Gym Companion (Placeholder)",
-    "Its an app that helps creating gym to dos.",
-    { src: project2Img, alt: "Project image representation." }
+    "Awesome TO-DO List",
+    "Its an experimental app to track a to-do list.",
+    { src: project2Img, alt: "Project image representation." },
+    [
+      new TagModel("Next.js", faJs),
+      new TagModel("PostgreSQL", BiLogoPostgresql),
+      new TagModel("Prisma", faCaretSquareUp),
+    ],
+    "https://to-do-list-app-rho-weld.vercel.app/"
   ),
   new ProjectModel(
     "Observatory Landig Page (Placeholder)",
