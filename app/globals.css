@@ -22,6 +22,7 @@ body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   font-size: 2.4rem;
   line-height: 1.5;
+  min-height: 100vh;
 }
 
 a {
@@ -32,13 +33,16 @@ a {
 
 .container {
   margin: 0 auto;
-  /* padding: 5rem 2rem; */
   max-width: 1140px;
 }
 
 .block {
   --padding-vertical: 5rem;
   padding: var(--padding-vertical) 2rem;
+}
+
+.block--horizontal {
+  padding: 0 2rem;
 }
 
 /* Typography */

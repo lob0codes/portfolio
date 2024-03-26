@@ -3,35 +3,40 @@ import Image, { StaticImageData } from "next/image";
 import Tag from "@/components/Project/Tag";
 import TagModel from "@/models/tag";
 
+interface ProjectProps {
+  title: string;
+  description: string;
+  image: { src: StaticImageData; alt: string };
+  tags?: TagModel[];
+}
+
 export default function Project({
   title,
   description,
   image,
   tags,
-}: {
-  title: string;
-  description: string;
-  image: { src: StaticImageData; alt: string };
-  tags?: TagModel[];
-}) {
+}: ProjectProps) {
   return (
     <>
       <article className={classes.project}>
-        <Image
-          className={classes.project__img}
-          src={image.src}
-          alt={image.alt}
-        />
-        <div className={classes.project__content}>
-          <h3 className={classes.project__title}>{title}</h3>
+        <div className={classes["image-container"]}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            className={classes.image}
+          />
+        </div>
+        <div className={classes.content}>
+          <h3 className={classes.itle}>{title}</h3>
           <p>{description}</p>
-          <div className={classes.project__tags}>
+          <div className={classes.tags}>
             {tags ? (
               tags.map((tag, index) => (
                 <Tag key={index} name={tag.name} icon={tag.icon} />
               ))
             ) : (
-              <p className={classes["project__tags__no-tags"]}>No tags</p>
+              <p className={classes["no-tags"]}>No tags</p>
             )}
           </div>
         </div>

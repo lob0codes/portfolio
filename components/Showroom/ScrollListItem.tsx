@@ -10,8 +10,8 @@ const ScrollListItem: React.FC<{
 }> = ({ item, activeIndex, itemIndex, url }) => {
   const scrollItemCLasses =
     activeIndex === itemIndex
-      ? `${classes["scroll-list__item"]}${classes.active}`
-      : `${classes["scroll-list__item"]}`;
+      ? `${classes.item}${classes.active}`
+      : `${classes.item}`;
 
   function anchorClickHandler(
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>

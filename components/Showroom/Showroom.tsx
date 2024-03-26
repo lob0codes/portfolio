@@ -4,15 +4,8 @@ import ScrollList from "./ScrollList";
 import classes from "@/components/Showroom/Showroom.module.css";
 
 import { BiLogoPostgresql } from "react-icons/bi";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faJs } from "@fortawesome/free-brands-svg-icons";
-import {
-  faArrowLeft,
-  faArrowRight,
-  faCaretSquareUp,
-} from "@fortawesome/free-solid-svg-icons";
-
-import { useState } from "react";
+import { faCaretSquareUp } from "@fortawesome/free-solid-svg-icons";
 
 import project1Img from "@/public/images/webpage_icon.png";
 import project2Img from "@/assests/to-do-app.jpg";
@@ -55,46 +48,10 @@ const projectsData = [
 ];
 
 export default function Showroom() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  function rightArrowClickHandler() {
-    if (activeIndex === projectsData.length - 1) {
-      return;
-    }
-
-    setActiveIndex((prevIndex) => {
-      return prevIndex + 1;
-    });
-  }
-
-  function leftArrowClickHandler() {
-    if (activeIndex === 0) {
-      return;
-    }
-
-    setActiveIndex((prevIndex) => {
-      return prevIndex - 1;
-    });
-  }
-
   return (
-    <section className={`block container ${classes.showroom}`}>
-      <h2 className={classes.showroom__title}>Showroom</h2>
-      <div className={classes.showroom__content}>
-        <div onClick={leftArrowClickHandler}>
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            className={classes["previous-project"]}
-          />
-        </div>
-        <ScrollList activeIndex={activeIndex} projects={projectsData} />
-        <div onClick={rightArrowClickHandler}>
-          <FontAwesomeIcon
-            icon={faArrowRight}
-            className={classes["next-project"]}
-          />
-        </div>
-      </div>
+    <section className={`container ${classes.showroom}`}>
+      <h2>Showroom</h2>
+      <ScrollList projects={projectsData} />
     </section>
   );
 }

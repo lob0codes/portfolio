@@ -1,0 +1,53 @@
+.showroom {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 25rem 0;
+}
+
+.content {
+  width: 200px;
+  grid-column: 2/4;
+  grid-row: 2/3;
+  overflow: hidden;
+}
+
+.scroll-list {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.next {
+  grid-column: 4/5;
+  grid-row: 2/3;
+  justify-self: flex-start;
+  margin-left: 8rem;
+}
+
+.previous {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: flex-end;
+  margin-right: 8rem;
+}
+
+.square {
+  min-width: 200px;
+  height: 200px;
+}
+
+.square1 {
+  background-color: lightblue;
+}
+
+.square2 {
+  background-color: lightcoral;
+}
+
+.square3 {
+  background-color: lightgreen;
+}
+
+.square4 {
+  background-color: lightyellow;
+}
