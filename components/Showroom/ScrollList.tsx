@@ -53,10 +53,17 @@ export default function ScrollList({ projects }: ScrollListProps) {
   useEffect(() => {
     // Calculate new scroll offset based on the active item and scroll adjustment
     const newScrollOffset = -activeItem * scrollAdjustment;
-    console.log(activeItem);
-    console.log(newScrollOffset);
     setScrollOffset(newScrollOffset);
   }, [activeItem, scrollAdjustment]);
+
+  function anchorClickHandler(
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    url: string
+  ) {
+    if (url === "") {
+      event.preventDefault();
+    }
+  }
 
   return (
     <article className={classes["scroll-list"]}>
@@ -73,13 +80,20 @@ export default function ScrollList({ projects }: ScrollListProps) {
           }}
         >
           {projects.map((project) => (
-            <Project
+            <a
+              href={project.url}
+              onClick={(event) => anchorClickHandler(event, project.url)}
+              target="_blank"
+              rel="noopener noreferrer"
               key={project.title}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              tags={project.tags}
-            />
+            >
+              <Project
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                tags={project.tags}
+              />
+            </a>
           ))}
         </div>
       </section>
