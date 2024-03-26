@@ -58,7 +58,7 @@ export default function ScrollList({ projects }: ScrollListProps) {
 
   function anchorClickHandler(
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    url: string
+    url: string | undefined
   ) {
     if (url === "") {
       event.preventDefault();
