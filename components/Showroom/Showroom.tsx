@@ -1,6 +1,6 @@
 "use client";
 
-import ScrollList from "./ScrollList";
+import ScrollList from "../ScrollList/ScrollList";
 import classes from "@/components/Showroom/Showroom.module.css";
 
 import { BiLogoPostgresql } from "react-icons/bi";

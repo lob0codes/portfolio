@@ -1,13 +1,15 @@
 "use client";
 
-import classes from "@/components/Showroom/ScrollList.module.css";
+import classes from "@/components/ScrollList/ScrollList.module.css";
 import ProjectModel from "@/models/project";
+
 import { useEffect, useState } from "react";
 
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Project from "../Project/Project";
+import ScrollListArrow from "./ScrollListArrow";
 
 interface ScrollListProps {
   projects: ProjectModel[];
@@ -38,6 +40,12 @@ export default function ScrollList({ projects }: ScrollListProps) {
     return () => window.removeEventListener("resize", updateScrollAdjustment);
   }, []);
 
+  useEffect(() => {
+    // Calculate new scroll offset based on the active item and scroll adjustment
+    const newScrollOffset = -activeItem * scrollAdjustment;
+    setScrollOffset(newScrollOffset);
+  }, [activeItem, scrollAdjustment]);
+
   function nextItemHandler() {
     if (activeItem !== projects.length - 1) {
       setActiveItem((prevActiveItem) => prevActiveItem + 1);
@@ -50,12 +58,6 @@ export default function ScrollList({ projects }: ScrollListProps) {
     }
   }
 
-  useEffect(() => {
-    // Calculate new scroll offset based on the active item and scroll adjustment
-    const newScrollOffset = -activeItem * scrollAdjustment;
-    setScrollOffset(newScrollOffset);
-  }, [activeItem, scrollAdjustment]);
-
   function anchorClickHandler(
     event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     url: string | undefined
@@ -67,10 +69,12 @@ export default function ScrollList({ projects }: ScrollListProps) {
 
   return (
     <article className={classes["scroll-list"]}>
-      <FontAwesomeIcon
-        icon={faArrowLeft}
-        className={classes["previous"]}
+      <ScrollListArrow
+        activeItem={activeItem}
+        projects={projects}
+        arrowType="previous"
         onClick={previousItemHandler}
+        className={classes.previous}
       />
       <section className={classes["content-container"]}>
         <div
@@ -98,10 +102,12 @@ export default function ScrollList({ projects }: ScrollListProps) {
         </div>
       </section>
 
-      <FontAwesomeIcon
-        icon={faArrowRight}
-        className={classes["next"]}
+      <ScrollListArrow
+        activeItem={activeItem}
+        projects={projects}
+        arrowType="next"
         onClick={nextItemHandler}
+        className={classes.next}
       />
     </article>
   );
