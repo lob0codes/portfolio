@@ -8,8 +8,8 @@ import { faJs } from "@fortawesome/free-brands-svg-icons";
 import { faCaretSquareUp } from "@fortawesome/free-solid-svg-icons";
 
 import project1Img from "@/public/images/webpage_icon.png";
-import project2Img from "@/assests/to-do-app.jpg";
-import project3Img from "@/assests/sky-image.jpg";
+import project2Img from "@/public/images/to-do-app.jpg";
+import project3Img from "@/public/images/lob0-codes-page.jpg";
 
 import ProjectModel from "@/models/project";
 import TagModel from "@/models/tag";
@@ -38,12 +38,18 @@ const projectsData = [
     "https://to-do-list-app-rho-weld.vercel.app/"
   ),
   new ProjectModel(
-    "Observatory Landig Page (Placeholder)",
-    "Landing page of a business.",
+    "lob0codes Blog",
+    "A space to show interesting things about React, Next.JS and Python",
     {
       src: project3Img,
       alt: "Project image representation.",
-    }
+    },
+    [
+      new TagModel("Next.js", faJs),
+      new TagModel("PostgreSQL", BiLogoPostgresql),
+      new TagModel("Prisma", faCaretSquareUp),
+    ],
+    "https://lobo-codes-blog.vercel.app/"
   ),
 ];
 
