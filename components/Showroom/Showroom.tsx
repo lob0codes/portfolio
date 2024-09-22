@@ -6,6 +6,8 @@ import classes from "@/components/Showroom/Showroom.module.css";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { faJs } from "@fortawesome/free-brands-svg-icons";
 import { faCaretSquareUp } from "@fortawesome/free-solid-svg-icons";
+import { faN } from "@fortawesome/free-solid-svg-icons";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 import project1Img from "@/public/images/webpage_icon.png";
 import project2Img from "@/public/images/to-do-app.jpg";
@@ -13,6 +15,7 @@ import project3Img from "@/public/images/lob0-codes-page.jpg";
 
 import ProjectModel from "@/models/project";
 import TagModel from "@/models/tag";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const projectsData = [
   new ProjectModel(
@@ -20,8 +23,8 @@ const projectsData = [
     "Its a web page created to show and discuss about tabletop games!",
     { src: project1Img, alt: "Project image representation." },
     [
-      new TagModel("Next.js", faJs),
-      new TagModel("PostgreSQL", BiLogoPostgresql),
+      new TagModel("Next.js", faN),
+      new TagModel("PostgreSQL", faDatabase),
       new TagModel("Prisma", faCaretSquareUp),
     ],
     "https://red-beard-meeple-app.vercel.app/"
@@ -31,8 +34,8 @@ const projectsData = [
     "Its an experimental app to track a to-do list.",
     { src: project2Img, alt: "Project image representation." },
     [
-      new TagModel("Next.js", faJs),
-      new TagModel("PostgreSQL", BiLogoPostgresql),
+      new TagModel("Next.js", faN),
+      new TagModel("PostgreSQL", faDatabase),
       new TagModel("Prisma", faCaretSquareUp),
     ],
     "https://to-do-list-app-rho-weld.vercel.app/"
@@ -45,7 +48,7 @@ const projectsData = [
       alt: "Project image representation.",
     },
     [
-      new TagModel("Next.js", faJs),
+      new TagModel("Next.js", faN),
       new TagModel("PostgreSQL", BiLogoPostgresql),
       new TagModel("Prisma", faCaretSquareUp),
     ],
@@ -58,6 +61,7 @@ export default function Showroom() {
     <section className={`container ${classes.showroom}`}>
       <h2>Showroom</h2>
       <ScrollList projects={projectsData} />
+      <FontAwesomeIcon icon="fa-solid fa-n" />
     </section>
   );
 }
