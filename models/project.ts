@@ -1,17 +1,16 @@
-import { StaticImageData } from "next/image";
 import TagModel from "./tag";
 
 class ProjectModel {
   title: string;
   description: string;
-  image: { src: StaticImageData; alt: string };
+  image: { src: string; alt: string };
   tags?: TagModel[];
   url?: string;
 
   constructor(
     title: string,
     description: string,
-    image: { src: StaticImageData; alt: string },
+    image: { src: string; alt: string },
     tags?: TagModel[],
     url?: string
   ) {
