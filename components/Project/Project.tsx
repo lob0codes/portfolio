@@ -1,12 +1,12 @@
 import classes from "@/components/Project/Project.module.css";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Tag from "@/components/Project/Tag";
 import TagModel from "@/models/tag";
 
 interface ProjectProps {
   title: string;
   description: string;
-  image: { src: StaticImageData; alt: string };
+  image: { src: string; alt: string };
   tags?: TagModel[];
 }
 
