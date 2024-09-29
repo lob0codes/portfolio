@@ -1,58 +1,78 @@
 "use client";
 
-import classes from "@/app/testu2/page.module.css";
-import { useState } from "react";
+import axios, { AxiosResponse } from "axios";
 
-const squares = [
-  { id: 1, color: "lightblue" },
-  { id: 2, color: "lightcoral" },
-  { id: 3, color: "lightgreen" },
-  { id: 4, color: "lightyellow" },
-];
+import { useEffect, useState } from "react";
 
-export default function Testu2Page() {
-  const [activeSquare, setActiveSquare] = useState(0);
-  const [scrollOffset, setScrollOffset] = useState(0);
+import SkillsListRow from "@/components/Skills/SkillListRow";
+import SkillModel from "@/models/skill";
 
-  const handleNext = () => {
-    if (activeSquare !== squares.length - 1) {
-      setActiveSquare((prevActiveSquare) => prevActiveSquare + 1);
-      setScrollOffset((prevOffset) => prevOffset - 40);
-    }
-  };
+import { ExperienceLevel } from "@/types/enums/ExperienceLevel";
 
-  const handlePrevious = () => {
-    if (activeSquare !== 0) {
-      setActiveSquare((prevActiveSquare) => prevActiveSquare - 1);
-      setScrollOffset((prevOffset) => prevOffset + 40);
-    }
-  };
+interface DbSkill {
+  name: string;
+  image: string;
+  experience: ExperienceLevel;
+}
+
+function mapDbSkillsToSkillModel(response: AxiosResponse) {
+  return response.data.map((skill: DbSkill) => {
+    return new SkillModel(skill.name, skill.image, skill.experience);
+  });
+}
+
+export default function SkillsTable() {
+  const [skills, setSkills] = useState<{ [key: string]: SkillModel[] }>({});
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const getSkills = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/api/skills/");
+        console.log(response.data);
+
+        const skills: SkillModel[] = mapDbSkillsToSkillModel(response);
+
+        const skillsByExperience: { [key: string]: SkillModel[] } = {};
+        console.log(skillsByExperience);
+        skills.forEach((skill) => {
+          if (!skillsByExperience[skill.experience]) {
+            skillsByExperience[skill.experience] = [];
+          }
+          skillsByExperience[skill.experience].push(skill);
+        });
+
+        console.log(skillsByExperience);
+        setSkills(skillsByExperience);
+      } catch (err) {
+        if (axios.isAxiosError(err)) {
+          setError(err.message);
+        } else {
+          setError("Unknown error happened getting the portfolio projects.");
+        }
+      }
+    };
+
+    getSkills();
+  }, []);
 
   return (
-    <div className={classes.showroom}>
-      <button className={classes.previous} onClick={handlePrevious}>
-        Previous
-      </button>
-      <div className={classes["content"]}>
-        <div
-          className={`${classes["scroll-list"]}`}
-          style={{
-            transform: `translateX(${scrollOffset}rem)`,
-          }}
-        >
-          {squares.map((square) => (
-            <div
-              key={square.id}
-              className={`${classes.square} `}
-              style={{ backgroundColor: square.color }}
-            ></div>
-          ))}
-        </div>
-      </div>
-
-      <button className={classes.next} onClick={handleNext}>
-        Next
-      </button>
-    </div>
+    <>
+      <SkillsListRow
+        header="Expert"
+        headerBgColor="#FF6347"
+        skills={skills["Expert"]}
+      />
+      <SkillsListRow
+        header="Intermediate"
+        headerBgColor="#FFA500"
+        skills={skills["Intermediate"]}
+      />
+      <SkillsListRow
+        header="Beginner"
+        headerBgColor="#32CD32"
+        skills={skills["Beginner"]}
+      />
+    </>
   );
 }

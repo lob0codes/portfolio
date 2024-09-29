@@ -1,0 +1,22 @@
+.row {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: bold;
+}
+
+.header {
+  width: 11rem;
+  height: 11rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  flex-basis: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
