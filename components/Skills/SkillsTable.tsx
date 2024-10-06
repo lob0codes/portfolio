@@ -27,7 +27,13 @@ export default function SkillsTable() {
   useEffect(() => {
     const getSkills = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/skills/");
+        // local
+        // const response = await axios.get("http://127.0.0.1:8000/api/skills/");
+        // prod
+        const response = await axios.get(
+          "https://lob0codes.pythonanywhere.com/api/skills/"
+        );
+
         console.log(response.data);
 
         const skills: SkillModel[] = mapDbSkillsToSkillModel(response);

@@ -56,7 +56,13 @@ export default function Showroom() {
   useEffect(() => {
     const getProjects = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/projects/");
+        // Local
+        // const response = await axios.get("http://127.0.0.1:8000/api/projects/");
+
+        // Prod
+        const response = await axios.get(
+          "https://lob0codes.pythonanywhere.com/api/projects/"
+        );
 
         const showRoomProjects: ProjectModel[] =
           mapDbProjectsToShowroomProjects(response);
