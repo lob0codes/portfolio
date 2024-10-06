@@ -76,7 +76,7 @@ export default function Showroom() {
 
   return (
     <section className={`container ${classes.showroom}`}>
-      <h2>Showroom</h2>
+      <h2 className={classes.title}>Showroom</h2>
       {error ? (
         <p>There are no projects to show!!!</p>
       ) : (

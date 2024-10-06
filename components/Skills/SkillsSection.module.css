@@ -1,11 +1,11 @@
-.showroom {
+.skills-section {
+  color: var(--color-secondary);
   display: flex;
+  gap: 7rem;
   flex-direction: column;
   align-items: center;
-  gap: 7rem;
+  justify-content: center;
   margin-top: 15rem;
-  margin-bottom: 17rem;
-  padding-left: 3.3rem;
 }
 
 .title {

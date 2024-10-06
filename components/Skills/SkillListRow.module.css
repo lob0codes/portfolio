@@ -4,10 +4,21 @@
   font-size: 1.5rem;
   color: black;
   font-weight: bold;
+  position: relative;
+}
+
+.row:not(:last-child)::after {
+  content: "";
+  height: 0.3rem;
+  background-color: #e0e0e0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .header {
-  width: 11rem;
+  width: 12rem;
   height: 11rem;
   display: flex;
   align-items: center;
