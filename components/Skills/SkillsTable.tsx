@@ -65,17 +65,17 @@ export default function SkillsTable() {
     <article className={classes["skills-table"]}>
       <SkillsListRow
         header="Proficient"
-        headerBgColor="#FF6347"
+        headerBgColor="#9B2C2C"
         skills={skills["Proficient"]}
       />
       <SkillsListRow
         header="Intermediate"
-        headerBgColor="#FFA500"
+        headerBgColor="#D69E2E"
         skills={skills["Intermediate"]}
       />
       <SkillsListRow
         header="Beginner"
-        headerBgColor="#32CD32"
+        headerBgColor="#38B2AC"
         skills={skills["Beginner"]}
       />
     </article>
