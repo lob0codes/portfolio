@@ -57,6 +57,7 @@ export default function Showroom() {
     const getProjects = async () => {
       try {
         const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+        console.log(baseUrl);
         const projectsUrl = `${baseUrl}projects/`;
 
         const response = await axios.get(projectsUrl);
