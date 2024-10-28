@@ -5,3 +5,10 @@
   height: 7rem;
   position: relative;
 }
+
+@media screen and (max-width: 550px) {
+  .image-container {
+    width: 9rem;
+    height: 5rem;
+  }
+}
