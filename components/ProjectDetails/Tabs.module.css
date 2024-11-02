@@ -1,0 +1,38 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-self: flex-start;
+  font-size: 2rem;
+}
+.menu {
+  display: flex;
+  gap: 3rem;
+  color: var(--color-secondary);
+}
+
+.menu-item {
+  position: relative;
+  transition: color 0.8s ease;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  color: var(--color-headings);
+}
+
+.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) skew(-30deg); /* Centers the rhomboid and skews it */
+  width: 125%;
+  height: 100%;
+  z-index: -1; /* Places the background behind the text */
+  transition: background-color 0.8s ease;
+}
+
+.menu-item:hover::before {
+  background-color: rgb(56, 56, 56);
+}

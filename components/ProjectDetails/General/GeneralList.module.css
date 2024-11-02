@@ -1,0 +1,17 @@
+.list {
+  font-size: 1.5rem;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+}
+
+.list li::before {
+  content: "";
+  width: 10px; /* Width of the rhomboid */
+  height: 6px; /* Height of the rhomboid */
+  background-color: var(--color-secondary);
+  transform: skew(-30deg); /* Skew to create rhomboid shape */
+  margin-right: 0.5em; /* Space between bullet and text */
+}

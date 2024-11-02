@@ -1,11 +1,13 @@
 .page {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  gap: 10rem;
+  margin: 12rem 20rem;
 }
 
-.tabs {
-  display: flex;
-  gap: 3rem;
+.header {
+  font-size: 5rem;
+  align-self: flex-start;
 }

@@ -1,0 +1,14 @@
+.general {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.general h2 {
+  font-size: 3rem;
+  margin-bottom: 1.3rem;
+}
+
+.description-text {
+  max-width: 100ch;
+}
