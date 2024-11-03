@@ -4,7 +4,8 @@
 
 .list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.8rem;
 }
 
 .list li::before {
@@ -13,5 +14,5 @@
   height: 6px; /* Height of the rhomboid */
   background-color: var(--color-secondary);
   transform: skew(-30deg); /* Skew to create rhomboid shape */
-  margin-right: 0.5em; /* Space between bullet and text */
+  margin-top: 0.8rem;
 }
