@@ -1,0 +1,30 @@
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 3rem;
+  gap: 2rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: all ease 0.6s;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.purple-theme {
+  background-color: lightgray;
+  color: black;
+}
+
+.title-purple-theme {
+  color: var(--color-secondary);
+}

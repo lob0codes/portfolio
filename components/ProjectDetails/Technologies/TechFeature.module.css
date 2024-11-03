@@ -1,0 +1,11 @@
+.feature {
+  position: relative;
+}
+
+.image-container {
+  width: 40rem;
+  height: 35rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}

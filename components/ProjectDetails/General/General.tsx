@@ -3,8 +3,8 @@ import GeneralList from "./GeneralList";
 
 const challengesList = [
   "Making the app responsive to smaller screens.",
-  "Make the shadcn component &quot;Popover&quot; adjust its position based on its position.",
-  "Defining &quot;TodoList&quot; component, how to handle completed ones, deleting a todo, etc.",
+  'Make the shadcn component "Popover" adjust its position based on its position.',
+  'Defining "TodoList" component, how to handle completed to-dos, deleting a to-do, etc.',
 ];
 
 const nextStepsList = [
