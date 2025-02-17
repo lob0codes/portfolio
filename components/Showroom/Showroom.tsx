@@ -11,6 +11,7 @@ import TagModel from "@/models/tag";
 import iconsMapping from "@/utils/iconsMapping";
 
 interface DbProject {
+  id: number;
   title: string;
   description: string;
   image: string;
@@ -38,8 +39,8 @@ function mapDbProjectsToShowroomProjects(response: AxiosResponse) {
         return new TagModel(tag.name, iconsMapping[tag.icon]);
       });
     }
-
     return new ProjectModel(
+      project.id,
       project.title,
       project.description,
       image,
@@ -65,6 +66,7 @@ export default function Showroom() {
           mapDbProjectsToShowroomProjects(response);
 
         setProjects(showRoomProjects);
+        
       } catch (err) {
         if (axios.isAxiosError(err)) {
           setError(err.message);

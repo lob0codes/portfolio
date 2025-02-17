@@ -1,13 +1,12 @@
 "use client";
 
-import classes from "@/app/testu2/page.module.css";
-import Tabs from "@/components/ProjectDetails/Tabs";
-import TechFeature from "@/components/ProjectDetails/Technologies/TechFeature";
+import classes from "@/app/testu3/page.module.css";
+import Gallery from "@/components/ProjectDetails/Gallery/Gallery";
 
 export default function TestPage() {
   return (
     <div className={classes.page}>
-      <TechFeature />
+      <Gallery />
     </div>
   );
 }

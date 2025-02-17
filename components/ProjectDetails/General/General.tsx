@@ -1,6 +1,14 @@
 import classes from "@/components/ProjectDetails/General/General.module.css";
 import GeneralList from "./GeneralList";
 
+interface GeneralProps {
+  generalData: {
+    description: string;
+    challenges: { id: number; title: string }[];
+    nextSteps: { id: number; title: string }[];
+  };
+}
+
 const challengesList = [
   "Making the app responsive to smaller screens.",
   'Make the shadcn component "Popover" adjust its position based on its position.',
@@ -12,20 +20,17 @@ const nextStepsList = [
   "Adding the capability of dragging and dropping items within same categories.",
 ];
 
-export default function General() {
+export default function General({ generalData }: GeneralProps) {
   return (
     <div className={classes["general"]}>
       <section className={classes.description}>
         <h2>Description</h2>
         <p className={classes["description-text"]}>
-          This is a project that consists in creating a to-do list, where each
-          task can be mark as completed and the app will move it to the
-          completed section. Tasks put in completed can be unchecked and it will
-          be moved back to the pending section.
+          {generalData?.description}
         </p>
       </section>
-      <GeneralList title="Challenges" items={challengesList} />
-      <GeneralList title="Next-Steps" items={nextStepsList} />
+      <GeneralList title="Challenges" items={generalData?.challenges} />
+      <GeneralList title="Next-Steps" items={generalData?.nextSteps} />
     </div>
   );
 }

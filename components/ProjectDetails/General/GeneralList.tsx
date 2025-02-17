@@ -2,7 +2,7 @@ import classes from "./GeneralList.module.css";
 
 interface GeneralListProps {
   title: string;
-  items: string[];
+  items: { id: number; title: string }[];
 }
 
 export default function GeneralList({ title, items }: GeneralListProps) {
@@ -11,7 +11,7 @@ export default function GeneralList({ title, items }: GeneralListProps) {
       <h2>{title}</h2>
       <ul className={classes["list"]}>
         {items.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item.id}>{item.title}</li>
         ))}
       </ul>
     </div>

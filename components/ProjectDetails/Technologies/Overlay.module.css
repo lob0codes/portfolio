@@ -21,7 +21,7 @@
 }
 
 .purple-theme {
-  background-color: lightgray;
+  background-color: var(--color-headings);
   color: black;
 }
 

@@ -1,6 +1,5 @@
 import classes from "@/components/Skills/SkillListRow.module.css";
 import Skill from "./Skill";
-import { ReactNode } from "react";
 
 import SkillModel from "@/models/skill";
 

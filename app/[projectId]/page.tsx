@@ -1,8 +1,15 @@
-export default function ProjectDetailsPage() {
+import ProjectDetails from "@/components/ProjectDetails/ProjectDetails";
+import { cn } from "@/lib/utils";
+import styles from "@/app/global.module.css";
+
+export default function ProjectDetailsPage({
+  params,
+}: {
+  params: { projectId: string };
+}) {
   return (
-    <>
-      <h2>Project Details</h2>
-      {/* <ProjectDescription /> */}
-    </>
+    <section className={cn("custom-container", "custom-block")}>
+      <ProjectDetails projectId={params.projectId} />
+    </section>
   );
 }

@@ -2,17 +2,23 @@ import classes from "@/components/Project/Project.module.css";
 import Image from "next/image";
 import Tag from "@/components/Project/Tag";
 import TagModel from "@/models/tag";
+import Link from "next/link";
+import MoreInformation from "./MoreInformation";
 
 interface ProjectProps {
+  id: number;
   title: string;
   description: string;
+  url: string | undefined;
   image: { src: string; alt: string };
   tags?: TagModel[];
 }
 
 export default function Project({
+  id,
   title,
   description,
+  url,
   image,
   tags,
 }: ProjectProps) {
@@ -39,6 +45,8 @@ export default function Project({
               <p className={classes["no-tags"]}>No tags</p>
             )}
           </div>
+
+          <MoreInformation id={id} url={url} />
         </div>
       </article>
     </>
