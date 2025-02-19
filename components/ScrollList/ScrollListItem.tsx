@@ -13,30 +13,16 @@ const ScrollListItem: React.FC<{
       ? `${classes.item}${classes.active}`
       : `${classes.item}`;
 
-  function anchorClickHandler(
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) {
-    if (url === "") {
-      event.preventDefault();
-    }
-  }
-
   return (
     <div className={scrollItemCLasses}>
-      <a
-        href={url}
-        onClick={anchorClickHandler}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Project
-          id={item.id}
-          image={item.image}
-          title={item.title}
-          description={item.description}
-          tags={item.tags}
-        />
-      </a>
+      <Project
+        id={item.id}
+        image={item.image}
+        title={item.title}
+        description={item.description}
+        tags={item.tags}
+        url={item.url}
+      />
     </div>
   );
 };
