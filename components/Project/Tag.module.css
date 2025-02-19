@@ -10,12 +10,13 @@
 }
 
 .tag__header {
+  font-size: 1.2rem;
   font-weight: bold;
   padding-right: 0.3rem;
 }
 
 .tag__icon {
   fill: var(--color-body);
-  height: 20px;
-  width: 20px;
+  height: 1.5rem;
+  width: 1.5rem;
 }

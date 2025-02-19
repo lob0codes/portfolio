@@ -30,6 +30,7 @@ const ScrollListItem: React.FC<{
         rel="noopener noreferrer"
       >
         <Project
+          id={item.id}
           image={item.image}
           title={item.title}
           description={item.description}

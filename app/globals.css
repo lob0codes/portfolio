@@ -105,12 +105,12 @@ a {
   text-decoration: none;
 }
 
-.container {
+.custom-container {
   margin: 0 auto;
   max-width: 1140px;
 }
 
-.block {
+.custom-block {
   --padding-vertical: 5rem;
   padding: var(--padding-vertical) 2rem;
 }

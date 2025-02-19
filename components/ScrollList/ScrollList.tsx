@@ -5,9 +5,6 @@ import ProjectModel from "@/models/project";
 
 import { useEffect, useState } from "react";
 
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Project from "../Project/Project";
 import ScrollListArrow from "./ScrollListArrow";
 
@@ -58,15 +55,6 @@ export default function ScrollList({ projects }: ScrollListProps) {
     }
   }
 
-  function anchorClickHandler(
-    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-    url: string | undefined
-  ) {
-    if (url === "") {
-      event.preventDefault();
-    }
-  }
-
   return (
     <article className={classes["scroll-list"]}>
       <ScrollListArrow
@@ -84,20 +72,15 @@ export default function ScrollList({ projects }: ScrollListProps) {
           }}
         >
           {projects.map((project) => (
-            <a
-              href={project.url}
-              onClick={(event) => anchorClickHandler(event, project.url)}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={project.title}
-            >
-              <Project
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                tags={project.tags}
-              />
-            </a>
+            <Project
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              description={project.description}
+              image={project.image}
+              tags={project.tags}
+              url={project.url}
+            />
           ))}
         </div>
       </section>

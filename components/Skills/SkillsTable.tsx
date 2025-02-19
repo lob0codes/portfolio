@@ -35,7 +35,6 @@ export default function SkillsTable() {
         const skills: SkillModel[] = mapDbSkillsToSkillModel(response);
 
         const skillsByExperience: { [key: string]: SkillModel[] } = {};
-        console.log(skillsByExperience);
         skills.forEach((skill) => {
           if (!skillsByExperience[skill.experience]) {
             skillsByExperience[skill.experience] = [];
