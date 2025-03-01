@@ -10,8 +10,14 @@ interface MoreInformationProps {
 export default function MoreInformation({ id, url }: MoreInformationProps) {
   return (
     <section className={classes["more-information"]}>
-      {url && <Link href={url}>Visit page</Link>}
-      <Link href={`/${id}`}>More details...</Link>
+      {url && (
+        <Link className={classes["info-link"]} href={url}>
+          Visit page
+        </Link>
+      )}
+      <Link className={classes["info-link"]} href={`/${id}`}>
+        More details...
+      </Link>
     </section>
   );
 }
