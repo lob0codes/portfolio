@@ -2,7 +2,6 @@ import classes from "@/components/Project/Project.module.css";
 import Image from "next/image";
 import Tag from "@/components/Project/Tag";
 import TagModel from "@/models/tag";
-import Link from "next/link";
 import MoreInformation from "./MoreInformation";
 
 interface ProjectProps {

@@ -1,5 +1,3 @@
-import NextJsImg from "@/public/images/next-js-image-2.png";
-
 import TechFeature from "./TechFeature";
 import { useEffect, useState } from "react";
 import axios from "axios";

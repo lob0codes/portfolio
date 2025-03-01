@@ -7,9 +7,9 @@
 }
 
 .image-container {
-  position: relative;
-  border-radius: 0.1rem;
   overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
   grid-row-end: span 2;
 }
 
@@ -19,4 +19,13 @@
 
 .image-container:nth-child(2n) {
   grid-row-end: span 3;
+}
+
+.no-images {
+  padding-top: 4rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--color-text-secondary);
 }

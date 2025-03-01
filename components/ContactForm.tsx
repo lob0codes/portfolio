@@ -1,6 +1,5 @@
 import classes from "@/components/ContactForm.module.css";
 import Image from "next/image";
-import robotImage from "@/assests/wall-e.jpg";
 import { shareMessage } from "@/lib/actions";
 
 export default function ContactForm() {
@@ -11,7 +10,9 @@ export default function ContactForm() {
           Feel free to contact me about projects ideas or any feedback you may
           have about my job.
         </h3>
-        <Image src={robotImage} alt="robot image" />
+        <div className={classes["image-container"]}>
+          <Image src={"/images/wall-e.jpg"} alt="robot image" fill />
+        </div>
       </header>
       <main className={classes.contact__body}>
         <form className={classes.contact__form} action={shareMessage}>
