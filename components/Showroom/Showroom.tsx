@@ -53,6 +53,7 @@ function mapDbProjectsToShowroomProjects(response: AxiosResponse) {
 export default function Showroom() {
   const [projects, setProjects] = useState<ProjectModel[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getProjects = async () => {
@@ -67,13 +68,14 @@ export default function Showroom() {
           mapDbProjectsToShowroomProjects(response);
 
         setProjects(showRoomProjects);
-        
       } catch (err) {
         if (axios.isAxiosError(err)) {
           setError(err.message);
         } else {
           setError("Unknown error happened getting the portfolio projects.");
         }
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -86,7 +88,7 @@ export default function Showroom() {
       {error ? (
         <p>There are no projects to show!!!</p>
       ) : (
-        <ScrollList projects={projects} />
+        <ScrollList projects={projects} isLoading={isLoading} />
       )}
     </section>
   );

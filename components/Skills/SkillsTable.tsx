@@ -23,6 +23,7 @@ function mapDbSkillsToSkillModel(response: AxiosResponse) {
 export default function SkillsTable() {
   const [skills, setSkills] = useState<{ [key: string]: SkillModel[] }>({});
   const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getSkills = async () => {
@@ -49,6 +50,8 @@ export default function SkillsTable() {
         } else {
           setError("Unknown error happened getting the portfolio projects.");
         }
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -61,16 +64,19 @@ export default function SkillsTable() {
         header="Proficient"
         headerBgColor="#9B2C2C"
         skills={skills["Proficient"]}
+        isLoading={isLoading}
       />
       <SkillsListRow
         header="Intermediate"
         headerBgColor="#D69E2E"
         skills={skills["Intermediate"]}
+        isLoading={isLoading}
       />
       <SkillsListRow
         header="Beginner"
         headerBgColor="#38B2AC"
         skills={skills["Beginner"]}
+        isLoading={isLoading}
       />
     </article>
   );

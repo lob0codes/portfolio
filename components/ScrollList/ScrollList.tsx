@@ -6,13 +6,18 @@ import ProjectModel from "@/models/project";
 import { useEffect, useState } from "react";
 
 import Project from "../Project/Project";
+import ProjectSkeleton from "../Project/ProjectSkeleton";
 import ScrollListArrow from "./ScrollListArrow";
 
 interface ScrollListProps {
   projects: ProjectModel[];
+  isLoading?: boolean;
 }
 
-export default function ScrollList({ projects }: ScrollListProps) {
+export default function ScrollList({
+  projects,
+  isLoading = false,
+}: ScrollListProps) {
   const [activeItem, setActiveItem] = useState(0);
   const [scrollOffset, setScrollOffset] = useState(0);
   const [scrollAdjustment, setScrollAdjustment] = useState(43.8);
@@ -71,20 +76,25 @@ export default function ScrollList({ projects }: ScrollListProps) {
             transform: `translateX(${scrollOffset}rem)`,
           }}
         >
-          {projects.map((project) => (
-            <Project
-              key={project.id}
-              id={project.id}
-              title={project.title}
-              description={project.description}
-              image={project.image}
-              tags={project.tags}
-              url={project.url}
-            />
-          ))}
+          {isLoading ? (
+            <ProjectSkeleton />
+          ) : projects.length === 0 ? (
+            <div>No projects found.</div>
+          ) : (
+            projects.map((project) => (
+              <Project
+                key={project.id}
+                id={project.id}
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                tags={project.tags}
+                url={project.url}
+              />
+            ))
+          )}
         </div>
       </section>
-
       <ScrollListArrow
         activeItem={activeItem}
         projects={projects}
